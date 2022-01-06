@@ -4,19 +4,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Share It!</title>
-    <link rel="stylsesheet" href="/css/tailwind.output.css">
+    <link rel="stylesheet" href="/css/tailwind.output.css">
     <script
       src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
       defer
     ></script>
-    <script src="/js/app.js"></script>
+    <script src="/js/app.js">   </script>
 </head>
-<body x-data="main()">
-    <h1>
+<body x-data="main()" class="p-6 text-center">
+    <h1 class="font-bold text-6xl">
         Share it
     </h1>
-    <p x-text="game"></p>
-    <button @click = "shareIt()">Share It!</button>
+    <p>Share your New Year with everyone!</p>
+
+    <button @click = "shareIt()" class="mt-16 bg-purple-600 p-6 px-10 text-white">Share It!</button>
     
 </body>
 </html>

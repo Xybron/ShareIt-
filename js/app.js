@@ -1,12 +1,20 @@
-function main(){
-    return {
-        game : "You win",
-        shareIt(){
-            console.log("Sharing")
-            if(navigator.share)return  navigator.share({title : "Share It | Your first item shared. ", url : "www.google.com"})
-            
-            alert("Device not compatible with web sharing!")
-            
-        }
-    }
+function main() {
+  return {
+    async shareIt() {
+      const response = await fetch("/imgs/newYears.jpg");
+      const blob = await response.blob();
+      const filesArray = [
+        new File([blob], "newYears.jpg", {
+          type: "image/jpeg",
+          lastModified: new Date().getTime(),
+        }),
+      ];
+      const shareData = {
+        title: "ShareIt!",
+        text: "Happy New Year!",
+        files: filesArray,
+      };
+      navigator.share(shareData);
+    },
+  };
 }
